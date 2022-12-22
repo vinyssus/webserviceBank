@@ -28,14 +28,14 @@ public class SpringJaxRxApi {
 	@Path("/comptes")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	private List<Compte> compteList(){
+	public List<Compte> compteList(){
 		return cr.findAll();
 	}
 	
 	@Path("/compte/{id}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	private Compte getOne(@PathParam(value = "id")Long id) {
+	public Compte getOne(@PathParam(value = "id")Long id) {
 		return cr.findById(id).get();
 		
 	}
@@ -43,7 +43,7 @@ public class SpringJaxRxApi {
 	@Path("/save")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	private Compte addCompte(Compte compte) {
+	public Compte addCompte(Compte compte) {
 		return cr.save(compte);
 		
 	}
@@ -51,7 +51,7 @@ public class SpringJaxRxApi {
 	@Path("/update/{id}")
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
-	private Compte update(Compte compte, @PathParam("id")Long id) {
+	public Compte update(Compte compte, @PathParam("id")Long id) {
 		compte.setId(id);
 		return cr.save(compte);
 		
@@ -60,7 +60,7 @@ public class SpringJaxRxApi {
 	@Path("/delete")
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	private void delete(@PathParam("id")Long id) {
+	public void delete(@PathParam("id")Long id) {
 		
 		cr.deleteById(id);
 		
