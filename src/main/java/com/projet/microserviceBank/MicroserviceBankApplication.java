@@ -1,6 +1,6 @@
 package com.projet.microserviceBank;
 
-import java.util.Date;
+
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.projet.microserviceBank.Repository.CompteRepository;
-import com.projet.microserviceBank.entity.Compte;
-import com.projet.microserviceBank.entity.TypeDeCompte;
 
 @SpringBootApplication
 public class MicroserviceBankApplication {

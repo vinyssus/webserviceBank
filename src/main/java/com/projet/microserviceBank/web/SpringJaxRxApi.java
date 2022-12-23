@@ -27,7 +27,7 @@ public class SpringJaxRxApi {
 	
 	@Path("/comptes")
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public List<Compte> compteList(){
 		return cr.findAll();
 	}
@@ -57,7 +57,7 @@ public class SpringJaxRxApi {
 		
 	}
 	
-	@Path("/delete")
+	@Path("/delete/{id}")
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
 	public void delete(@PathParam("id")Long id) {
